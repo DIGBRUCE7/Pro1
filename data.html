@@ -1,44 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
-<?php include(“dbtest.php”); ?><head>
+
     <meta charset="UTF-8">
     <title></title>
 </head>
 <body>
-<?php
-/**
- * Created by PhpStorm.
- * User: David
- * Date: 25/11/2016
- * Time: 12:14
- */
-
-
-define('DB_SERVER','us-cdbr-azure-southcentral-f.cloudapp.net');
-define('DB_USERNAME','b113c9725aa456');
-define('DB_PASSWORD','8ee13182');
-define('DB_DATABASE','db77');
-
-// Create connection
-$conn = new mysqli($DB_SERVER, $DB_USERNAME, $DB_PASSWORD, $DB_DATABASE);
-// Check connection
-if ($conn->connect_error) {
-die("Connection failed: " . $conn->connect_error);
-}
-
-$sql = "SELECT id, firstname, lastname FROM MyGuests";
-$result = $conn->query($sql);
-
-if ($result->num_rows > 0) {
-// output data of each row
-while($row = $result->fetch_assoc()) {
-echo "id: " . $row["id"]. " - Name: " . $row["firstname"]. " " . $row["lastname"]. "<br>";
-}
-} else {
-echo "0 results";
-}
-$conn->close();
-?>
+<form action="dbtest.php">
+    <input type="submit" value="click on me!">
+</form>
 
 </body>
 </html>
