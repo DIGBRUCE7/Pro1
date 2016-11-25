@@ -12,3 +12,10 @@ define('DB_PASSWORD','8ee13182');
 define('DB_DATABASE','db77');
 
 $db = mysqli_connect(DB_SERVER, DB_USERNAME, DB_PASSWORD, DB_DATABASE);
+
+// test if connection was established, and print any errors
+if($db->connect_errno){
+    die(Connectfailed['.$db->connect _error.']);
+}
+
+
